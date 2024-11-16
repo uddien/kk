@@ -1,0 +1,11 @@
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  background-image: url('hutan.jpg');
+  background-size: cover;
+}
+canvas{
+  filter: blur(1px);
+}
