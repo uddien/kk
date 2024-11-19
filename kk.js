@@ -3,26 +3,29 @@ let c = init("canvas"),
   h = (canvas.height = window.innerHeight);
 //initiation
 
-class firefly{
-  constructor(){
-    this.x = Math.random()*w;
-    this.y = Math.random()*h;
-    this.s = Math.random()*2;
-    this.ang = Math.random()*2*Math.PI;
-    this.v = this.s*this.s/4;
-  }
-  move(){
-    this.x += this.v*Math.cos(this.ang);
-    this.y += this.v*Math.sin(this.ang);
-    this.ang += Math.random()*20*Math.PI/180-10*Math.PI/180;
-  }
-  show(){
-    c.beginPath();
-    c.arc(this.x,this.y,this.s,0,2*Math.PI);
-    c.fillStyle="#fddba3";
-    c.fill();
-  }
-}
+// class firefly{
+//   constructor(){
+//     this.x = Math.random()*w;
+//     this.y = Math.random()*h;
+//     this.s = Math.random()*2;
+//     this.ang = Math.random()*2*Math.PI;
+//     this.v = this.s*this.s/4;
+//   }
+//   move(){
+//     this.x += this.v*Math.cos(this.ang);
+//     this.y += this.v*Math.sin(this.ang);
+//     this.ang += Math.random()*20*Math.PI/180-10*Math.PI/180;
+//   }
+//   show(){
+//     c.beginPath();
+//     c.arc(this.x,this.y,this.s,0,2*Math.PI);
+//     c.fillStyle="#fddba3";
+//     c.fill();
+//   }
+// }
+
+
+
 
 let f = [];
 
