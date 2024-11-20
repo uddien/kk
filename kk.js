@@ -24,7 +24,9 @@ let c = init("canvas"),
 //   }
 // }
 
-
+class firefly {
+  
+}
 
 
 let f = [];
