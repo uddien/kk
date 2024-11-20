@@ -58,6 +58,12 @@ move() {
   this.x += this.v * Math.cos(this.ang);
   this.y += this.v * Math.sin(this.ang);
 }
+show() {
+  c.beginPath();
+  c.arc(this.x, this.y, this.s, 0, 2 * Math.PI);
+  c.fillStyle = distanceToMouse(this.x, this.y) < attractRadius ? "#ffeb3b" : "#fddba3";
+  c.fill();
+}
 }
 
 
