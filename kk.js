@@ -32,6 +32,32 @@ class firefly {
     this.ang = Math.random() * 2 * Math.PI;
     this.v = this.s * this.s / 4;
 }
+move() {
+  let dx = this.x - mouse.x;
+  let dy = this.y - mouse.y;
+  let distance = Math.sqrt(dx * dx + dy * dy);
+  let minDistance = 50; // Jarak minimum ke mouse
+
+  if (distance < attractRadius) {
+      if (distance > minDistance) {
+          // Jika masih dalam radius tapi cukup jauh, mendekati mouse
+          this.ang = Math.atan2(mouse.y - this.y, mouse.x - this.x)
+              + (Math.random() - 0.5) * 0.5; // Variasi arah
+          this.v = 1.5; // Kecepatan lebih cepat ketika dalam radius
+      } else {
+          // Jika terlalu dekat, bergerak acak
+          this.ang += Math.random() * (20 * Math.PI / 180) - (10 * Math.PI / 180);
+          this.v = this.s * this.s / 4;
+      }
+  } else {
+      // Gerakan acak jika di luar radius
+      this.v = this.s * this.s / 4;
+      this.ang += Math.random() * (20 * Math.PI / 180) - (10 * Math.PI / 180);
+  }
+
+  this.x += this.v * Math.cos(this.ang);
+  this.y += this.v * Math.sin(this.ang);
+}
 }
 
 
